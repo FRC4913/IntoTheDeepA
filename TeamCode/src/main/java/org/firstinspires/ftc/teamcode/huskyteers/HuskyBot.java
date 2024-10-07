@@ -112,7 +112,14 @@ abstract public class HuskyBot extends LinearOpMode {
         // Disable or re-enable the aprilTag processor at any time.
         //visionPortal.setProcessorEnabled(aprilTag, true);
 
-    }   // end method initAprilTag()
+    }
+
+    public boolean seesTag(int tagNumber) {
+        return aprilTag.getDetections().stream().anyMatch((aprilTagDetection) ->
+             aprilTagDetection.id == tagNumber
+        );
+    }
+
 
 
     public void instantiateMotors(Pose2d pose) {

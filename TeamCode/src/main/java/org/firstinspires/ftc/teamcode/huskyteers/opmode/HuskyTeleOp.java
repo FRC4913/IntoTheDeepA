@@ -29,6 +29,12 @@ public class HuskyTeleOp extends HuskyBot {
         });
         gamepad1Utils.addRisingEdge("dpad_up", (pressed) -> visionPortal.stopStreaming());
         gamepad1Utils.addRisingEdge("dpad_up", (pressed) -> visionPortal.resumeStreaming());
+        gamepad1Utils.addRisingEdge("right_bumper", (pressed) -> {
+            if (seesTag(0)) {
+
+            };
+
+        });
 
         while (opModeIsActive() && !isStopRequested()) {
             gamepad1Utils.processUpdates(gamepad1);
