@@ -11,25 +11,12 @@
 
 // Custom definitions may go here
 
-buildscript {
-    repositories {
-        mavenCentral()
-        maven {
-            url = 'https://www.matthewo.tech/maven/'
-        }
-    }
-    dependencies {
-        classpath 'org.team11260:fast-load-plugin:0.1.2'
 
-    }
-
-}
 
 // Include common definitions from above.
 apply plugin: 'kotlin-android'
 apply from: '../build.common.gradle'
 apply from: '../build.dependencies.gradle'
-apply plugin: 'org.team11260.fast-load-plugin'
 
 
 kotlin {
@@ -51,16 +38,12 @@ repositories {
     maven {
         url = 'https://maven.brott.dev/'
     }
-    maven {
-        url = 'https://www.matthewo.tech/maven/'
-    }
 }
 
 dependencies {
     implementation project(':FtcRobotController')
     implementation project(':Paths')
 
-    implementation 'org.team11260:fast-load:0.1.2'
     implementation "com.acmerobotics.roadrunner:ftc:0.1.19"
     implementation "com.acmerobotics.roadrunner:core:1.0.1"
     implementation "com.acmerobotics.roadrunner:actions:1.0.1"
